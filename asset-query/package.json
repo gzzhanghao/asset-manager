@@ -1,0 +1,17 @@
+{
+  "name": "asset-query",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "block-basekit-cli build:field",
+    "dev": "block-basekit-cli dev:field",
+    "pack": "block-basekit-cli pack:field",
+    "start": "block-basekit-cli start:field"
+  },
+  "dependencies": {
+    "@lark-opdev/block-basekit-server-api": "1.0.4-alpha.20"
+  },
+  "devDependencies": {
+    "@lark-opdev/block-basekit-cli": "1.0.4-alpha.20",
+    "ts-node": "^10.9.2"
+  }
+}
