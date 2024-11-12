@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "pnpm run --parallel dev"
+    "dev": "pnpm run --parallel dev",
+    "start": "pnpm run --parallel start",
+    "pack": "pnpm run --parallel pack"
   },
   "devDependencies": {
     "@eslint/js": "^9.14.0",

@@ -53,7 +53,7 @@ basekit.addField({
         {
           type: 'text',
           content:
-            '需要查询的基金 / 股票代码，如 "hk.00700"、"sh.510050"。支持类型：`sz` 上证；`sz` 深证；`hk` 港股；`us` - 美股；`fund` - 国内开放式基金',
+            '需要查询的基金 / 股票代码，如 "0700.HK"、"510050.SH"。支持类型：`SZ` 上证；`SZ` 深证；`HK` 港股；`US` - 美股；`FUND` - 国内开放式基金',
         },
       ],
       props: {
@@ -127,8 +127,12 @@ basekit.addField({
   async execute(params, context) {
     try {
       const inputCode = normalizeTextInput(params.inputCode);
-      const [type, code] = inputCode.split('.');
-
+      if (!/^\w+\.\w+$/.test(inputCode)) {
+        return {
+          code: FieldCode.InvalidArgument,
+        };
+      }
+      const [code, type] = inputCode.split('.');
       return {
         code: FieldCode.Success,
         data: await fetch({ type, code }, context),

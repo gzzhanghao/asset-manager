@@ -8,27 +8,27 @@ interface MarketInfo {
 
 const MARKET_TYPES: MarketInfo[] = [
   {
-    keys: ['hk', '港股'],
+    keys: ['HK', '港股'],
     code: 116,
     normalize: (code) => code.padStart(5, '0'),
   },
   {
-    keys: ['sh', '上证'],
+    keys: ['SH', '上证'],
     code: 1,
     normalize: (code) => code.padStart(6, '0'),
   },
   {
-    keys: ['sz', '深证', 'bj', '北证'],
+    keys: ['SZ', '深证', 'BJ', '北证'],
     code: 0,
     normalize: (value) => value.padStart(6, '0'),
   },
   {
-    keys: ['us', '美股'],
+    keys: ['US', '美股'],
     code: 105,
     normalize: (value) => value.toUpperCase(),
   },
   {
-    keys: ['fund', '基金'],
+    keys: ['FUND', '基金'],
     code: 150,
     normalize: (code) => code.padStart(6, '0'),
   },
@@ -54,7 +54,7 @@ export async function fetch(
   context: FieldContext,
 ): Promise<FetchResult> {
   const market = MARKET_TYPES.find((market) =>
-    market.keys.includes(params.type),
+    market.keys.includes(params.type.toUpperCase()),
   );
 
   const code = market?.normalize?.(params.code) ?? params.code;
