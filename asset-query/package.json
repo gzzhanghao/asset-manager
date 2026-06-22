@@ -8,10 +8,9 @@
     "start": "block-basekit-cli start:field"
   },
   "dependencies": {
-    "@lark-opdev/block-basekit-server-api": "1.0.4-alpha.20"
+    "@lark-opdev/block-basekit-server-api": "1.0.6"
   },
   "devDependencies": {
-    "@lark-opdev/block-basekit-cli": "1.0.4-alpha.20",
-    "ts-node": "^10.9.2"
+    "@lark-opdev/block-basekit-cli": "1.0.5"
   }
 }

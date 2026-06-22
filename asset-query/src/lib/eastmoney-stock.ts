@@ -59,7 +59,7 @@ export async function fetch(
 
   const code = market?.normalize?.(params.code) ?? params.code;
 
-  const url = `https://push2.eastmoney.com/api/qt/stock/get?${new URLSearchParams(
+  const url = `https://push2delay.eastmoney.com/api/qt/stock/get?${new URLSearchParams(
     {
       cb: 'cb',
       fields: 'f43,f57,f58,f59,f86,f154,f600,f601',

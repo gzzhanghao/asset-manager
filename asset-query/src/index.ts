@@ -11,7 +11,7 @@ import {
 import { fetch } from './lib/eastmoney-stock';
 
 // 通过addDomainList添加请求接口的域名
-basekit.addDomainList(['push2.eastmoney.com']);
+basekit.addDomainList(['push2delay.eastmoney.com']);
 
 basekit.addField({
   // 定义捷径的i18n语言资源
@@ -75,19 +75,19 @@ basekit.addField({
       properties: [
         {
           key: 'code',
-          title: field.t('code'),
+          label: field.t('code'),
           type: FieldType.Text,
         },
         {
           key: 'name',
-          title: field.t('name'),
+          label: field.t('name'),
           type: FieldType.Text,
           primary: true,
           isGroupByKey: true,
         },
         {
           key: 'price',
-          title: field.t('price'),
+          label: field.t('price'),
           type: FieldType.Number,
           extra: {
             formatter: NumberFormatter.DIGITAL_ROUNDED_3,
@@ -95,12 +95,12 @@ basekit.addField({
         },
         {
           key: 'currency',
-          title: field.t('currency'),
+          label: field.t('currency'),
           type: FieldType.Text,
         },
         {
           key: 'exchange_rate',
-          title: field.t('exchange_rate'),
+          label: field.t('exchange_rate'),
           type: FieldType.Number,
           extra: {
             formatter: NumberFormatter.DIGITAL_ROUNDED_4,
@@ -108,7 +108,7 @@ basekit.addField({
         },
         {
           key: 'update_time',
-          title: field.t('update_time'),
+          label: field.t('update_time'),
           type: FieldType.DateTime,
           extra: {
             dateFormat: DateFormatter.DATE_TIME_WITH_HYPHEN,
@@ -116,7 +116,7 @@ basekit.addField({
         },
         {
           key: 'url',
-          title: 'URL',
+          label: 'URL',
           type: FieldType.Text,
           hidden: true,
         },
@@ -132,7 +132,7 @@ basekit.addField({
           code: FieldCode.InvalidArgument,
         };
       }
-      const [code, type] = inputCode.split('.');
+      const [type, code] = inputCode.split('.');
       return {
         code: FieldCode.Success,
         data: await fetch({ type, code }, context),
