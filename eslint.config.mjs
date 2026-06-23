@@ -1,5 +1,4 @@
 import eslint from '@eslint/js';
-import eslintImport from 'eslint-plugin-import';
 import prettier from 'eslint-plugin-prettier/recommended';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
@@ -12,19 +11,8 @@ export default tseslint.config(
     ignores: ['dist/'],
   },
   {
-    plugins: {
-      import: eslintImport,
-    },
     rules: {
       '@typescript-eslint/no-explicit-any': 'off',
-      'import/order': [
-        'error',
-        {
-          'newlines-between': 'always',
-          alphabetize: { order: 'asc' },
-          pathGroupsExcludedImportTypes: ['builtin'],
-        },
-      ],
     },
   },
   {

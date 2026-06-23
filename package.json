@@ -3,15 +3,21 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "pnpm run --parallel dev",
-    "start": "pnpm run --parallel start",
-    "pack": "pnpm run --parallel pack"
+    "build": "block-basekit-cli build:field",
+    "dev": "block-basekit-cli dev:field",
+    "pack": "block-basekit-cli pack:field",
+    "start": "block-basekit-cli start:field"
+  },
+  "dependencies": {
+    "@lark-opdev/block-basekit-server-api": "1.0.6"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
+    "@lark-opdev/block-basekit-cli": "1.0.5",
+    "@tsconfig/node-lts": "^24.0.0",
+    "@types/node-fetch": "^2.6.13",
     "eslint": "^10.5.0",
     "eslint-config-prettier": "^10.1.8",
-    "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-prettier": "^5.5.6",
     "globals": "^17.6.0",
     "prettier": "^3.8.4",

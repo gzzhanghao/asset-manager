@@ -1,8 +1,0 @@
-packages:
-  - asset-query
-allowBuilds:
-  '@lark-opdev/cli': true
-  '@swc/core': true
-  core-js: true
-  keytar: true
-  metalsmith: true
